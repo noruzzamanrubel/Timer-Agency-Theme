@@ -1,0 +1,142 @@
+/*
+Theme Name: Timer Agency
+Theme URI:
+Author: Noruzzaman Rubel
+Author URI: 
+Description: 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: 
+Tags: blog, education
+Text Domain: timer
+*/
+
+
+/* Blog Post Social Share */
+.dpsp-column-4.dpsp-has-spacing .dpsp-networks-btns-wrapper li {
+    width: 45px;
+    margin-right: 10px;
+  }
+  .dpsp-share-text {
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+/*Comment Form dynamic Css*/
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  background: #02bdd5;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  margin-right: 500px;
+}
+.comments-area input[type=text],.comments-area input[type=email],.comments-area input[type=url],.comment-form-comment textarea {
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+
+}
+p.comment-form-author label, p.comment-form-email label,p.comment-form-url label{
+  display: none;
+}
+.comments-area input[type=url]{
+  display: none;
+}
+p.comment-form-author {
+  margin-left: 0 !important;
+}
+p.comment-form-author, p.comment-form-email,p.comment-form-url{
+  width: 49%;
+  float: left;
+  margin-left: 2%;
+}
+label {
+  display: none;
+}
+input[type=checkbox], input[type=radio] {
+  display: none;
+}
+.comment-form-comment textarea {
+  height: 200px !important;
+}
+
+
+.comment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-list .says {
+  display: none;
+}
+
+.comment-author {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 100 !important;
+  text-transform: capitalize;
+  display:inline-block;
+  margin-right: 10px;
+}
+
+.comment-author a {
+  color: #333333;
+}
+
+.comment-body {
+  position: relative;
+  padding-left: 120px;
+  
+}
+
+.comment-body img.avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+}
+.comment-metadata {
+  display: inline-block;
+  margin-top: -35px;
+}
+.comment-metadata a{
+  color: #333333;
+}
+.comment-meta {
+  margin-top: -35px;
+  margin-bottom: 13px;
+}
+.comment-list li {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 30px;
+}
+.reply a {
+  color: #02bdd5;
+  font-size: 12px;
+}
+ol.children {
+  list-style: none;
+  margin-left: 25px;
+}
+ol.children li {
+  margin-bottom: -40px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+
+/*Comment Form dynamic Css*/
+
