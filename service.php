@@ -77,7 +77,7 @@ get_header();?>
             </div>
             <div class="col-md-6">
                 <div class="block">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/team.jpg" alt="">
+                    <img class="img-responsive" src="<?php echo get_theme_mod('upload_setting'); ?>" alt="">
                 </div>
             </div>
         </div>

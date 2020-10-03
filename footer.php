@@ -23,11 +23,7 @@
             <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="http://www.Themefisher.com" target="_blank">Themefisher</a>. <br> 
-                            Get More 
-                            <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
-                                Free Bootstrap Templates
-                            </a>
+                        <p id="copyrights"class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> <?php echo get_theme_mod('footer_copyright_setting'); ?> <a href="https://github.com/noruzzamanrubel" target="_blank">Noruzzaman Rubel</a>
                         </p>
                     </div>
                     <div class="col-md-4">

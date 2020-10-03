@@ -7,9 +7,19 @@
  * @package Timer
  */
 
+//wp-bootstrap-navwalker For Sub Menu
+require_once get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';
+//wp-bootstrap-navwalker For Sub Menu
+
 //Tgm Plugin Activation
 require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
-require_once get_theme_file_path( "/inc/tgm.php" );
+require_once get_template_directory() . '/inc/tgm.php';
+
+//customizer file include
+require_once get_template_directory() . '/inc/customizer.php';
+
+//include ACF
+require_once get_template_directory() . '/inc/acf.php';
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
@@ -166,6 +176,14 @@ function timer_scripts() {
 	wp_enqueue_style( "facncybox-css", get_theme_file_uri( "/assets/plugins/facncybox/jquery.fancybox.css" ), null );
 	wp_enqueue_style( "style-css", get_theme_file_uri( "/assets/css/style.css" ), null );
 	wp_enqueue_style( "main-css", get_stylesheet_uri(), null );
+	
+	$form_icon_color=get_theme_mod('icon_color_setting','#02bdd5');
+	$form_iconstyle=<<<EOD
+	#feature .icon {
+		background-color: {$form_icon_color};
+	}
+	EOD;
+	wp_add_inline_style( 'main-css', $form_iconstyle );
 
 	
 	wp_enqueue_script( "owl-Theme-carousel-js", get_theme_file_uri( "/assets/plugins/jQurey/jquery.min.js" ), null, "1.0",true );
@@ -183,15 +201,17 @@ function timer_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'timer_scripts' );
 
+function cust_customizer_assets() {
+	wp_enqueue_script( "timer-customizer-js", get_theme_file_uri( "/assets/js/customizer.js" ), array(
+		'jquery',
+		'customize-preview'
+	), time(), true );
+}
+
+add_action( "customize_preview_init", 'cust_customizer_assets' );
 
 
-//wp-bootstrap-navwalker For Sub Menu
-require_once get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';
-//wp-bootstrap-navwalker For Sub Menu
-
-
-
-function my_theme_custom_post() {
+function timer_theme_custom_post() {
     register_post_type( 'posttype',
         array(
             'labels' => array(
@@ -204,5 +224,5 @@ function my_theme_custom_post() {
         )
     );
 }
-add_action( 'init', 'my_theme_custom_post' );
+add_action( 'init', 'timer_theme_custom_post' );
 

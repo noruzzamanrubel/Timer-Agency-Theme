@@ -10,7 +10,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme philosophy for publication on ThemeForest
+ * @version    2.6.1 for parent theme timer for publication on ThemeForest
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -33,7 +33,7 @@
  */
 require_once get_theme_file_path( '/lib/class-tgm-plugin-activation.php' );
 
-add_action( 'tgmpa_register', 'philosophy_register_required_plugins' );
+add_action( 'tgmpa_register', 'timer_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -52,7 +52,7 @@ add_action( 'tgmpa_register', 'philosophy_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function philosophy_register_required_plugins() {
+function timer_register_required_plugins() {
     /*
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -85,7 +85,7 @@ function philosophy_register_required_plugins() {
      * Only uncomment the strings in the config array if you want to customize the strings.
      */
     $config = array(
-        'id'           => 'philosophy',
+        'id'           => 'timer',
         // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',
         // Default absolute path to bundled plugins.
