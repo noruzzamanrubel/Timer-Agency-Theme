@@ -107,13 +107,13 @@ get_header();?>
             <div class="col-md-3">
                 <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                     <i class="ion-ios-email-outline"></i>
-                    <h5 id="address_email"><?php echo wp_kses_post(get_theme_mod('timer_contact_email')) ?></p>
+                    <h5 id="address_email"><?php echo wp_kses_post(get_theme_mod('timer_contact_email')) ?></h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
                     <i class="ion-ios-telephone-outline"></i>
-                    <h5 id="address_phone"><?php echo wp_kses_post(get_theme_mod('timer_contact_phone')) ?></p>
+                    <h5 id="address_phone"><?php echo wp_kses_post(get_theme_mod('timer_contact_phone')) ?></h5>
                 </div>
             </div>
         </div>
