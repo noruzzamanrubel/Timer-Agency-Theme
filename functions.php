@@ -17,6 +17,8 @@ require_once get_template_directory() . '/inc/tgm.php';
 
 //customizer file include
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/home.customizer.php';
+require_once get_template_directory() . '/inc/contact.customizer.php';
 
 //include ACF
 require_once get_template_directory() . '/inc/acf.php';

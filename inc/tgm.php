@@ -71,6 +71,11 @@ function timer_register_required_plugins() {
             'slug'     => 'social-pug',
             'required' => true,
         ),
+        array(
+            'name'     => 'Kirki Customizer Framework',
+            'slug'     => 'kirki',
+            'required' => true,
+        ),
 
 
     );

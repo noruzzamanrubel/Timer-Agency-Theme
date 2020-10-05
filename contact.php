@@ -39,10 +39,9 @@ get_header();?>
         <div class="row">
             <div class="col-md-6">
                 <div class="block">
-                    <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Contact With Me</h2>
-                    <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, ea!
-                         consectetur adipisicing elit. Dolore, ea!
+                    <h2 id="contact_ttl" class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s"><?php echo esc_html(get_theme_mod('timer_contact_setting')); ?></h2>
+                    <p id="contact_dsc" class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                        <?php echo wp_kses_post(get_theme_mod('timer_contact_setting_textarea')) ?>
                     </p>
                     <div class="contact-form">
                         <form id="contact-form" method="#" action="#" role="form">
@@ -80,9 +79,9 @@ get_header();?>
             </div>
             <div class="col-md-6">
                  <div class="map-area">
-                    <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find Us</h2>
-                    <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                        Si aute quis eu proident o cupidatat ne anim nescius, et est praesentibus, o quorum vidisse expetendis, nostrud eram quibusdam ad nam nostrud ubi.
+                    <h2 id="find_us" class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s"><?php echo esc_html(get_theme_mod('timer_contact_find_setting')); ?></h2>
+                    <p id="find_us_area" class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                        <?php echo wp_kses_post(get_theme_mod('timer_contact_find_setting_textarea')) ?>
                         
                     </p>
                     <div class="map">
@@ -96,51 +95,29 @@ get_header();?>
             <div class="col-md-3">
                 <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
                     <i class="ion-ios-location-outline"></i>
-                    <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
+                    <h5 id="address_one"><?php echo wp_kses_post(get_theme_mod('timer_contact_address_one')) ?></h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
                     <i class="ion-ios-location-outline"></i>
-                    <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
+                    <h5 id="address_two"><?php echo wp_kses_post(get_theme_mod('timer_contact_address_two')) ?></h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                     <i class="ion-ios-email-outline"></i>
-                    <p>support@themefisher.com<br>support@themefisher.com</p>
+                    <h5 id="address_email"><?php echo wp_kses_post(get_theme_mod('timer_contact_email')) ?></p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
                     <i class="ion-ios-telephone-outline"></i>
-                    <p>+07 052 245 022<br>+07 999 999 999</p>
+                    <h5 id="address_phone"><?php echo wp_kses_post(get_theme_mod('timer_contact_phone')) ?></p>
                 </div>
             </div>
         </div>
     </div>
-</section>  
-
-
-
-
-            <!--
-            ==================================================
-            Call To Action Section Start
-            ================================================== -->
-            <section id="call-to-action">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="block">
-                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
-                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
+</section>
 
 <?php get_footer(); ?>

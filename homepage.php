@@ -227,9 +227,9 @@ Portfolio Section Start
 <section id="feature">
     <div class="container">
         <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Offer From Me</h1>
-            <p class="wow fadeInDown" data-wow-delay=".5s">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,<br> quasi dolores numquam dolor vero ex, tempora commodi repellendus quod laborum.
+            <h1 id="titlewow" class="title wow fadeInDown" data-wow-delay=".3s"><?php echo esc_html(get_theme_mod('timer_offer_setting')); ?></h1>
+            <p id="titlewows" class="wow fadeInDown" data-wow-delay=".5s">
+                <?php echo wp_kses_post(get_theme_mod('timer_offer_setting_textarea')); ?>
             </p>
         </div>
         <div class="row">
