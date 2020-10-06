@@ -168,13 +168,13 @@ function timer_contactpages_customize_register( WP_Customize_Manager $wp_customi
 						),
 					),
 				) );
-				$wp_customize->selective_refresh->add_partial( 'timer_contact_address_text', array(
-					'selector'        => '#address_two',
-					'settings'        => 'timer_contact_address_tows',
-					'render_callback' => function() {
-						return get_theme_mod('timer_contact_address_two');
-					},
-					) );
+			$wp_customize->selective_refresh->add_partial( 'timer_contact_address_text', array(
+				'selector'        => '#address_two',
+				'settings'        => 'timer_contact_address_tows',
+				'render_callback' => function() {
+					return get_theme_mod('timer_contact_address_two');
+				},
+				) );
 			//Textarea
 			Kirki::add_field( 'timer_contact_address_emails', array(
 				'type'            => 'textarea',
@@ -192,13 +192,13 @@ function timer_contactpages_customize_register( WP_Customize_Manager $wp_customi
 						),
 					),
 				) );
-				$wp_customize->selective_refresh->add_partial( 'timer_contact_email_tex', array(
-					'selector'        => '#address_email',
-					'settings'        => 'timer_contact_address_emails',
-					'render_callback' => function() {
-						return get_theme_mod('timer_contact_email');
-					},
-					) );
+			$wp_customize->selective_refresh->add_partial( 'timer_contact_email_tex', array(
+				'selector'        => '#address_email',
+				'settings'        => 'timer_contact_address_emails',
+				'render_callback' => function() {
+					return get_theme_mod('timer_contact_email');
+				},
+				) );
 			//Textarea
 			Kirki::add_field( 'timer_contact_phones', array(
 				'type'            => 'textarea',
@@ -216,14 +216,123 @@ function timer_contactpages_customize_register( WP_Customize_Manager $wp_customi
 						),
 					),
 				) );
-				$wp_customize->selective_refresh->add_partial( 'timer_contact_phone_tex', array(
-					'selector'        => '#address_phone',
-					'settings'        => 'timer_contact_phones',
-					'render_callback' => function() {
-						return get_theme_mod('timer_contact_phone');
-					},
-					) );
-
+			$wp_customize->selective_refresh->add_partial( 'timer_contact_phone_tex', array(
+				'selector'        => '#address_phone',
+				'settings'        => 'timer_contact_phones',
+				'render_callback' => function() {
+					return get_theme_mod('timer_contact_phone');
+				},
+				) );
+		Kirki::add_section( 'timer_footer_top_section_id', array(
+			'title'          => esc_html__( 'Footer Top Section', 'timer' ),
+			'panel'          => 'timer_Contact_panel_id',
+			'priority'       => 160
+		) );
+			//footer Top Title 
+			Kirki::add_field( 'timer_footer_top_Head', array(
+				'type'            => 'text',
+				'settings'        => 'timer_footer_top_Heading',
+				'label'           => esc_html__( 'Title', 'timer' ),
+				'section'         => 'timer_footer_top_section_id',
+				'default'         => esc_html__( 'SO WHAT YOU THINK ?', 'timer' ),
+				'priority'        => 9,
+				'partial_refresh'    => array(
+					'timer_footer_top_title' => array(
+						'selector'        => '#footer_top_title',
+						'render_callback' => function() {
+							return get_theme_mod('timer_footer_top_Heading');
+							},
+						),
+					),
+			 ) );
+			$wp_customize->selective_refresh->add_partial( 'timer_footer_top_title', array(
+				'selector'        => '#footer_top_title',
+				'settings'        => 'timer_footer_top_Head',
+				'render_callback' => function() {
+					return get_theme_mod('timer_footer_top_Heading');
+				},
+			 ) );
+			//Footer Top Textarea
+			Kirki::add_field( 'timer_footer_top_content', array(
+				'type'            => 'textarea',
+				'settings'        => 'timer_footer_top_textarea',
+				'label'           => esc_html__( 'Description', 'timer' ),
+				'section'         => 'timer_footer_top_section_id',
+				'default'         => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis', 'timer' ),
+				'priority'        => 10,
+				'partial_refresh'    => array(
+					'timer_footer_top_tex' => array(
+						'selector'        => '#footer_top_des',
+						'render_callback' => function() {
+							return get_theme_mod('timer_footer_top_textarea');
+							},
+						),
+					),
+				) );
+			$wp_customize->selective_refresh->add_partial( 'timer_footer_top_tex', array(
+				'selector'        => '#footer_top_des',
+				'settings'        => 'timer_footer_top_content',
+				'render_callback' => function() {
+					return get_theme_mod('timer_footer_top_textarea');
+				},
+				) );
+			//footer Top Button
+			Kirki::add_field( 'timer_footer_top_buttons', array(
+				'type'            => 'text',
+				'settings'        => 'timer_footer_top_button',
+				'label'           => esc_html__( 'Button', 'timer' ),
+				'section'         => 'timer_footer_top_section_id',
+				'default'         => esc_html__( 'Contact with Me', 'timer' ),
+				'priority'        => 11,
+				'partial_refresh'    => array(
+					'timer_footer_top_but' => array(
+						'selector'        => '#footer_top_btn',
+						'render_callback' => function() {
+							return get_theme_mod('timer_footer_top_button');
+							},
+						),
+					),
+			 ) );
+			$wp_customize->selective_refresh->add_partial( 'timer_footer_top_but', array(
+				'selector'        => '#footer_top_btn',
+				'settings'        => 'timer_footer_top_buttons',
+				'render_callback' => function() {
+					return get_theme_mod('timer_footer_top_button');
+				},
+			 ) );
+			Kirki::add_panel( 'timer_footer_panel', array(
+			'priority'    => 150,
+			'title'       => esc_html__( 'footer Section', 'timer' ),
+			) );
+			Kirki::add_section( 'timer_contact_section_ids', array(
+			'title'          => esc_html__( 'Footer Cpoy Right', 'timer' ),
+			'panel'          => 'timer_footer_panel',
+			'priority'       => 161
+			) );
+			//Footer Top Textarea
+			Kirki::add_field( 'timer_footer_copyrights', array(
+				'type'            => 'textarea',
+				'settings'        => 'timer_footer_copyright',
+				'label'           => esc_html__( 'Copy Right', 'timer' ),
+				'section'         => 'timer_contact_section_ids',
+				'default'         => esc_html__( 'Design and Developed By', 'timer' ),
+				'priority'        => 30,
+				'partial_refresh'    => array(
+					'timer_footer_copy' => array(
+						'selector'        => '#copyrights',
+						'render_callback' => function() {
+							return get_theme_mod('timer_footer_copyright');
+							},
+						),
+					),
+				) );
+			$wp_customize->selective_refresh->add_partial( 'timer_footer_copy', array(
+				'selector'        => '#copyrights',
+				'settings'        => 'timer_footer_copyrights',
+				'render_callback' => function() {
+					return get_theme_mod('timer_footer_copyright');
+				},
+				) );
 
 }
 add_action( 'customize_register', 'timer_contactpages_customize_register' );

@@ -44,21 +44,18 @@ About Section Start
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <h2>
-                    ABOUT ME
+                    <h2 id="about_se">
+                    <?php echo esc_html(get_theme_mod('timer_aboutme')) ?>
                     </h2>
-                    <p>
-                        Hello, I’m a UI/UX Designer & Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University.And scrambled it to make a type specimen book. It has survived not only five centuries
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, adipisci voluptatum repudiandae, natus impedit repellat aut officia illum at assumenda iusto reiciendis placeat. Temporibus, vero.
+                    <p id="about_p">
+                        <?php echo wp_kses_post(get_theme_mod('timer_about_me_tta')) ?>
                     </p>
                 </div>
                 
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/about.jpg" alt="">
+                    <img id="about_img" src="<?php echo get_theme_mod('timer_about_me_img');?>">
                 </div>
             </div>
         </div>
@@ -73,12 +70,14 @@ Portfolio Section Start
 <section id="works" class="works">
     <div class="container">
         <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Latest Works</h1>
-            <p class="wow fadeInDown" data-wow-delay=".5s">
-                Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+            <h1 id="latest_head" class="title wow fadeInDown" data-wow-delay=".3s"><?php echo esc_html(get_theme_mod('timer_Latest_work')); ?></h1>
+            <p id="latest_p" class="wow fadeInDown" data-wow-delay=".5s">
+                <?php echo wp_kses_post(get_theme_mod('timer_Latest_work_tta')); ?>
             </p>
         </div>
         <div class="row">
+
+        
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                     <div class="img-wrapper">

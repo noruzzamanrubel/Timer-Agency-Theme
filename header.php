@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html <?php language_attributes( ); ?> class="no-js">
     <head>
         <!-- Basic Page Needs
         ================================================== -->
-        <meta charset="utf-8">
+        <meta charset="<?php bloginfo( 'charset' ) ?>">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" href="favicon.ico">
 
@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
 
     </head>
-    <body>
+    <body <?php body_class(); ?>>
 
 
         <!--
@@ -37,7 +37,11 @@
                     <!-- logo -->
                     <div class="navbar-brand">
                         <a href="<?php echo esc_url(site_url());?>" >
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
+                            <?php 
+                                if ( function_exists( 'the_custom_logo' ) ) {
+                                    the_custom_logo();
+                                }
+                            ?>
                         </a>
                     </div>
                     <!-- /logo -->

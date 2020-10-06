@@ -19,27 +19,7 @@ function time_customize_register($wp_customize){
                 'section'    => 'icon_color_section',
                 'settings'   => 'icon_color_setting',
     ) ) );
-    //Text field 
-    $wp_customize->add_section( 'footer_copyright_section',array(
-        'title' => __('Footer Copy Right Section','timer'),
-        'priority'=>70
-    ) );
-    $wp_customize->add_setting('footer_copyright_setting', array(
-        'default' => __('Design and Developed by'),
-        'transport'=>'postMessage'//refresh
-    ));
-    $wp_customize->add_control( 'footer_copyright_setting', array(
-        'label'      => __( 'footer text', 'timer' ),
-        'section'    => 'footer_copyright_section',
-        'type'       => 'text'
-    ) );
-    $wp_customize->selective_refresh->add_partial( 'footer_copyright', array(
-        'selector'        => '#copyrights',
-        'settings'        => 'footer_copyright_setting',
-        'render_callback' => function() {
-            return get_theme_mod('footer_copyright_setting');
-        },
-     ) );
+    
     //upload media/image
     $wp_customize->add_section( 'upload_media_section',array(
         'title' => __('Upload Media Or Image','timer'),

@@ -7,9 +7,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="block">
-                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
-                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
+                                <h2 id="footer_top_title" class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms"><?php echo esc_html(get_theme_mod('timer_footer_top_Heading')); ?></h2>
+                                <p id="footer_top_des" class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms"><?php echo wp_kses_post(get_theme_mod('timer_footer_top_textarea')); ?></p>
+                                <a id="footer_top_btn" href="<?php echo esc_url(site_url('/contact'));?>" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms"><?php echo esc_html(get_theme_mod('timer_footer_top_button')); ?></a>
                             </div>
                         </div>
                         
@@ -23,7 +23,7 @@
             <footer id="footer">
                 <div class="container">
                     <div class="col-md-8">
-                        <p id="copyrights"class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> <?php echo get_theme_mod('footer_copyright_setting'); ?> <a href="https://github.com/noruzzamanrubel" target="_blank">Noruzzaman Rubel</a>
+                        <p id="copyrights"class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> <?php echo wp_kses_post( get_theme_mod('timer_footer_copyright') ); ?> <a href="https://github.com/noruzzamanrubel" target="_blank">Noruzzaman Rubel</a>
                         </p>
                     </div>
                     <div class="col-md-4">
