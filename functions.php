@@ -63,6 +63,7 @@ if ( ! function_exists( 'timer_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'custom-size', 84, 84 );
+		add_image_size( 'custom', 360, 300 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -228,13 +229,13 @@ function timer_theme_custom_post() {
             'show_ui' => true,
         )
 	);
-	register_post_type( 'latest_work',
+	register_post_type( 'portfolio',
 		array(
 			'labels' => array(
-				'name' => __( 'Latest Works' ),
-				'singular_name' => __( 'latest-work' )
+				'name' => __( 'Portfolio' ),
+				'singular_name' => __( 'portfolio' )
 			),
-			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
+			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes','excerpt'),
 			'public' => false,
 			'show_ui' => true,
 		)

@@ -62,14 +62,11 @@ About Section Start
     </div>
 </section> <!-- /#about -->
 
+
+
 <!--
 ==================================================
 Portfolio Section Start
-================================================== -->
-<?php get_template_part('portfolio') ?>
-<!--
-==================================================
-Portfolio Section End
 ================================================== -->
 <section id="feature">
     <div class="container">
