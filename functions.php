@@ -19,6 +19,7 @@ require_once get_template_directory() . '/inc/tgm.php';
 require_once get_template_directory() . '/inc/customizer/customizer.php';
 require_once get_template_directory() . '/inc/customizer/home.customizer.php';
 require_once get_template_directory() . '/inc/customizer/contact.customizer.php';
+require_once get_template_directory() . '/inc/customizer/portfolio.customizer.php';
 
 //include ACF
 require_once get_template_directory() . '/inc/acf.php';
@@ -225,7 +226,7 @@ function timer_theme_custom_post() {
                 'singular_name' => __( 'author-info' )
             ),
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
-            'public' => false,
+            'public' => true,
             'show_ui' => true,
         )
 	);
@@ -236,8 +237,9 @@ function timer_theme_custom_post() {
 				'singular_name' => __( 'portfolio' )
 			),
 			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes','excerpt'),
-			'public' => false,
+			'public' => true,
 			'show_ui' => true,
+			'taxonomies'          => array( 'category','post_tag' ),
 		)
 	);
 }

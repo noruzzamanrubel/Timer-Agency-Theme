@@ -66,7 +66,7 @@ About Section Start
 ==================================================
 Portfolio Section Start
 ================================================== -->
-<?php get_template_part('portfolio') ?>
+<?php get_template_part('template-part-portfolio') ?>
 <!--
 ==================================================
 Portfolio Section End

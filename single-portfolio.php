@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <?php
 
-while(have_posts()): the_post();?>
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post(); ?>
 
 ==================================================
 Global Page Section Start
@@ -11,11 +12,11 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2>Big Headline for Portfolio Project</h2>
+                    <h2><?php the_title();?></h2>
                     <div class="portfolio-meta">
-                       <span>Dec 11, 2020</span>|
-                       <span> Category: typography</span>|
-                       <span> website: <a href="http://www.themefisher.com">Themefisher</a></span>
+                        <span><?php the_time( 'F j, Y' ) ;?></span>
+                        <span> Category : <?php the_category(',') ;?> </span>
+                        <span> Tags : <a href="<?php the_permalink( );?>"> <?php the_tags('');?></a></span>
                     </div>
                 </div>
             </div>
@@ -28,15 +29,10 @@ Global Page Section Start
         <div class="row">
             <div class="col-md-12">
                 <div class="portfolio-single-img">
-                    <img class="img-responsive" alt="" src="images/portfolio/post-1.jpg">
+                    <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
                 </div>
                 <div class="portfolio-content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas. Nemo, a, rem! Atque quisquam aperiam eaque tenetur autem, soluta itaque omnis. Minus nesciunt, sint, animi illum quo ab voluptate esse delectus unde maiores iure, quasi a suscipit ipsam aliquid voluptatem. Perspiciatis eveniet, pariatur illum aut cum dolor neque consequatur error aliquid facilis in quasi temporibus assumenda tempore, doloremque autem saepe enim nihil. Voluptates asperiores ullam voluptate quas similique ratione quia hic, eum distinctio laboriosam, consectetur tempora voluptatibus optio natus cumque est necessitatibus dolore alias.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis expedita repellendus laboriosam aliquid. Neque doloribus ea, id reprehenderit alias saepe debitis eligendi molestias odit, nesciunt rem. Dolorem saepe, provident dolore nesciunt laudantium nostrum enim natus veritatis harum maxime et iure ratione, nulla. Minus excepturi commodi tempore voluptate. Blanditiis similique dolor asperiores ex excepturi perspiciatis, dolores id esse. Voluptate beatae nesciunt cum esse ratione officiis necessitatibus blanditiis ea, laboriosam fugit vero maxime? Voluptatum illo dolorum autem pariatur quisquam. Voluptates soluta culpa necessitatibus veritatis tempora incidunt doloribus placeat repellat et facilis eum sapiente fugit numquam aut, laboriosam aspernatur, esse, magnam excepturi repudiandae amet voluptas nulla quidem. Veritatis nisi consequuntur saepe qui quisquam dignissimos assumenda, iusto odio. Dignissimos reprehenderit esse iusto cupiditate nisi enim, animi similique itaque, perspiciatis error qui. Aperiam, architecto provident.
-                    </p>
+                    <?php the_content(); ?>
                 </div>
              
             </div>
@@ -46,110 +42,46 @@ Global Page Section Start
 
 <section class="works works-fit">
     <div class="container">
-        <h2 class="subtitle">Some Of Our Features Works</h2>
-            <p class="subtitle-des">
-                Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+        <h2 id="portfolio_title" class="subtitle"><?php echo esc_html(get_theme_mod('timer_portfolio_ttl')); ?></h2>
+            <p id="postfolio_sub_title" class="subtitle-des">
+                <?php echo wp_kses_post(get_theme_mod('timer_portfolio_sub_head_tta'))  ?>
             </p>
         <div class="row">
+            <?php
+                global $post;
+                $args = array( 'posts_per_page' => 4, 'post_type'=> 'portfolio', 'orderby' => 'menu_order', 'order' => 'ASC' );
+                $myposts = get_posts( $args );
+                foreach( $myposts as $post ) : setup_postdata($post); ?>
             <div class="col-sm-3">
                  <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
                     <div class="img-wrapper">
-                        <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="portfolio items">
+                        <?php the_post_thumbnail('custom',array('class'=> 'img-responsive')); ?>
                         <div class="overlay">
                             <div class="buttons">
-                                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox" href="images/portfolio/item-1.jpg">Demo</a>        
-                                <a target="_blank" href="single-postfolio.html">Details</a>
+                            <a rel="gallery" class="fancybox" href="<?php 
+                                 $att_id=get_post_thumbnail_id();
+                                 echo wp_get_attachment_image_url($att_id,'full');
+                                  
+                                ?>">Demo</a>
+                                <a target="_blank" href="<?php the_permalink();?>">Details</a>
                             </div>
                         </div>
                     </div>
                     <figcaption>
                         <h4>
-                            <a href="#">
-                                Dew Drop        
+                            <a href="<?php the_permalink();?>">
+                                <?php the_title(); ?>   
                             </a>
                         </h4>
-                        <p>
-                            Redesigne UI Concept
-                        </p>
+                        <?php the_excerpt() ?>
                     </figcaption>
                 </figure>
             </div>
-
-            <div class="col-sm-3">
-                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="portfolio items">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox" href="images/portfolio/item-2.jpg">Demo</a>        
-                                <a target="_blank" href="single-postfolio.html">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <h4>
-                            <a href="#">
-                                Bottle Mockup        
-                            </a>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="col-sm-3">
-                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox" href="images/portfolio/item-3.jpg">Demo</a>        
-                                <a target="_blank" href="single-postfolio.html">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <h4>
-                            <a href="#">
-                                Table Design        
-                            </a>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="col-sm-3">
-                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox" href="images/portfolio/item-4.jpg">Demo</a>        
-                                <a target="_blank" href="single-postfolio.html">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <h4>
-                            <a href="#">
-                                Make Up elements        
-                            </a>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor.
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
+        <?php endforeach; wp_reset_query(); ?>
         </div>
     </div>
 </section>   
 
-<?php endwhile; ?>
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
